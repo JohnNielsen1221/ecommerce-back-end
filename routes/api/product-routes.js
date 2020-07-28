@@ -6,6 +6,7 @@ const sequelize = require('../../config/connection');
 
 // get all products
 router.get('/', (req, res) => {
+  console.log("We are in the product route");
   Product.findAll({
     //include associated Category and Tag data
     include: [

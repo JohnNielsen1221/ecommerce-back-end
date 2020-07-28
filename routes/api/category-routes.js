@@ -13,9 +13,11 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbCategoryData => res.json(dbCategoryData))
+    .then(dbCategoryData => {
+      res.json(dbCategoryData)
+    })
     .catch(err => {
-      console.log(err);
+      console.log("Error thrown in router.get('/')", err);
       res.status(500).json(err);
     });
 });
